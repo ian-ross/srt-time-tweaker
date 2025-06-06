@@ -8,5 +8,5 @@ Homepage: https://github.com/BhagyaJyoti22006/srt-time-tweaker
 from .srt_time_tweaker import srt_time_tweaker
 
 __all__ = ["srt_time_tweaker"]
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 
