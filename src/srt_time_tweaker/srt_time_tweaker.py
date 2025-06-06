@@ -19,7 +19,7 @@ def srt_time_tweaker(srt_input, srt_output="output.srt", hours=0, minutes=0, sec
     
     # Read and load input srt file
     lines = []
-    with open(srt_input, "r") as file:
+    with open(srt_input, "r", encoding="utf-8") as file:
         for line in file:
             lines.append(line)
     
@@ -72,7 +72,7 @@ def srt_time_tweaker(srt_input, srt_output="output.srt", hours=0, minutes=0, sec
         continue
     
     # Write to output srt file
-    with open(srt_output, "w") as file:
+    with open(srt_output, "w", encoding="utf-8") as file:
         for i in lines:
             file.write(i)
     
