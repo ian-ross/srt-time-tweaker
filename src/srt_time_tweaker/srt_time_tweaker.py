@@ -1,11 +1,11 @@
-from re import match
+from re import fullmatch
 from datetime import timedelta
 
 
 def srt_time_tweaker(srt_input, srt_output="output.srt", hours=0, minutes=0, seconds=0, milliseconds=0, duration = None, subtract_delay=False, ignore_negative_error=False):
     # Validate the input duration from duration arg if provided else from individual h,m,s,ms args
     if duration is not None:
-        if not match(r"\d+:[0-5][0-9]:[0-5][0-9],\d+$", duration):
+        if not fullmatch(r"\d+:[0-5][0-9]:[0-5][0-9],\d+$", duration):
             raise ValueError(f"Wrong format for duration={duration}; duration must follow \"HH:MM:SS,ms\" format.")
         d = list(map(int, duration.replace(",",":").split(":")))
         h,m,s,ms = d[0], d[1], d[2], d[3]
@@ -28,12 +28,12 @@ def srt_time_tweaker(srt_input, srt_output="output.srt", hours=0, minutes=0, sec
         # Defining pattern to match with an actual timings line
         pattern = r"\s*(\d+:[0-5][0-9]:[0-5][0-9],\d+)\s*-->\s*(\d+:[0-5][0-9]:[0-5][0-9],\d+)\s*$"
         line = lines[i].strip()
-        matching = match(pattern, line)
-        if not matching:
+        match = fullmatch(pattern, line)
+        if not match:
             continue
         # Move forward only if the pattern is matched
-        ss_data = matching.group(1).replace(",",":").split(":")
-        to_data = matching.group(2).replace(",",":").split(":")
+        ss_data = match.group(1).replace(",",":").split(":")
+        to_data = match.group(2).replace(",",":").split(":")
         # Validate hours and milliseconds to be less than 1000
         ss_data[-1] = ss_data[-1][:6]
         to_data[-1] = to_data[-1][:6]

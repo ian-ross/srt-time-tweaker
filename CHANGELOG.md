@@ -7,13 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.0.1] - 2025-06-6
+### Changed
+
+- Changed string matching from using `re.match` to `re.fullmatch`.
+
+## [1.0.1] - 2025-06-06
 
 ### Changed
 
 - Updated file reading and writing to use UTF-8 encoding to ensure proper handling of non-ASCII characters in .srt files.
 
-## [1.0.0] - 2025-06-6
+## [1.0.0] - 2025-06-06
 
 ### Added
 
