@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "srt-time-tweaker"
-version = "1.0.2"
+version = "1.1.0"
 description = "A no-frills solution for fixing subtitle synchronization issues in SRT (SubRip Subtitle) files by precisely shifting all subtitle timestamps forward or backward using configurable time delays."
 readme = "README.md"
 requires-python = ">=3.7"

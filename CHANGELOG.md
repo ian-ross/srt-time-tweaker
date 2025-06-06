@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.1.0] - 2025-06-06
+
+### Changed
+
+- Improved modularity and clarity of SRT time-shifting logic by extracting reusable helper functions.
+- Extracted `valid_timings_line(line)` to independently validate subtitle timing lines.
+- Extracted `get_timings(line)` to independently parse and return start and end timestamp components.
+
 ## [1.0.2] - 2025-06-06
 
 ### Changed
@@ -29,7 +37,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Handles negative timing errors with an option to ignore or raise exceptions.
 - Usable both as a command-line tool and as a Python importable function.
 
-[unreleased]: https://github.com/BhagyaJyoti22006/srt-time-tweaker/compare/v1.0.2...HEAD
-[1.0.2]: https://github.com/BhagyaJyoti22006/srt-time-tweaker/compare/v1.0.0...v1.0.2
+[unreleased]: https://github.com/BhagyaJyoti22006/srt-time-tweaker/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/BhagyaJyoti22006/srt-time-tweaker/compare/v1.0.2...v1.1.0
+[1.0.2]: https://github.com/BhagyaJyoti22006/srt-time-tweaker/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/BhagyaJyoti22006/srt-time-tweaker/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/BhagyaJyoti22006/srt-time-tweaker/releases/tag/v1.0.0

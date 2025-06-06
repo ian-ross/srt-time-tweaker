@@ -106,6 +106,30 @@ srtt(
 | `subtract_delay`        | `bool` | Subtract the delay from timestamps instead of adding                                           | True           |
 | `ignore_negative_error` | `bool` | Ignore negative timing errors instead of raising exceptions (while subtract)                   | False          |
 
+#### Independent Utility Functions
+
+In addition to the main API, two utility functions are provided for validating and extracting subtitle timing data. These are useful when working with .srt files at a lower level or integrating custom logic:
+
+```python
+from srt_time_tweaker import valid_timings_line, get_timings
+```
+
+| Function                   | Description                                                                                                                                					 |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `valid_timings_line(line)` | Returns `True` if the given line matches the standard SRT timing format (`HH:MM:SS,ms --> HH:MM:SS,ms`); otherwise `False`.                					 |
+| `get_timings(line)`        | Extracts and returns a tuple of two lists: start and end time components as `([HH, MM, SS, ms],[HH, MM, SS, ms])`; otherwise `([], [])` if invalid line       |
+
+**Example Usage:**
+
+```python
+line = "00:01:15,500 --> 00:01:18,750"
+
+if valid_timings_line(line):
+    ss, to = get_timings(line)
+    print("Start:", ss)    # start at [0, 1, 15, 500]
+    print("End:", to)      # end at [0, 1, 18, 750]
+```
+
 ---
 
 ## Example SRT

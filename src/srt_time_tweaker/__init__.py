@@ -5,8 +5,10 @@ License : Apache License Version 2.0
 Homepage: https://github.com/BhagyaJyoti22006/srt-time-tweaker
 '''
 
-from .srt_time_tweaker import srt_time_tweaker
+from .srt_time_tweaker import srt_time_tweaker, valid_timings_line, get_timings
+from .valid_timings_line import valid_timings_line
+from .get_timings import get_timings
 
-__all__ = ["srt_time_tweaker"]
-__version__ = "1.0.2"
+__all__ = ["srt_time_tweaker", "valid_timings_line", "get_timings"]
+__version__ = "1.1.0"
 
