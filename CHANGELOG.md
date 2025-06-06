@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2025-06-6
+
 ### Changed
 
 - Updated file reading and writing to use UTF-8 encoding to ensure proper handling of non-ASCII characters in .srt files.
@@ -21,5 +23,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Handles negative timing errors with an option to ignore or raise exceptions.
 - Usable both as a command-line tool and as a Python importable function.
 
-[unreleased]: https://github.com/BhagyaJyoti22006/srt-time-tweaker/compare/v1.0.0...HEAD
+[unreleased]: https://github.com/BhagyaJyoti22006/srt-time-tweaker/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/BhagyaJyoti22006/srt-time-tweaker/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/BhagyaJyoti22006/srt-time-tweaker/releases/tag/v1.0.0
