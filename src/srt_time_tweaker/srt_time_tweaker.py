@@ -48,14 +48,14 @@ def srt_time_tweaker(srt_input, srt_output="output.srt", hours=0, minutes=0, sec
         ss_m = (ss_new_td.seconds%3600)//60
         ss_s = ss_new_td.seconds%60
         ss_ms = ss_new_td.microseconds//1000
-        ss_new = f"{ss_h}:{ss_m:02}:{ss_s:02},{ss_ms:03}"
+        ss_new = f"{ss_h}:{ss_m:02}:{ss_s:02}.{ss_ms:03}"
         # Define to delay as timedelta
         to_h = to_new_td.days*24 + to_new_td.seconds//3600
         to_h = f"0{to_h}" if to_h<10 else f"{to_h}"
         to_m = (to_new_td.seconds%3600)//60
         to_s = to_new_td.seconds%60
         to_ms = to_new_td.microseconds//1000
-        to_new = f"{to_h}:{to_m:02}:{to_s:02},{to_ms:03}"
+        to_new = f"{to_h}:{to_m:02}:{to_s:02}.{to_ms:03}"
         # Form the final line to write to output
         lines[i] = f"{ss_new} --> {to_new}\n"
         # Validate negative error if any
